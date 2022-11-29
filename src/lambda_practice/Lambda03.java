@@ -13,15 +13,19 @@ public class Lambda03 {
         Apartman daire4=new Apartman("dogu",5,3000);
 
         List<Apartman> kiralikDaireler=new ArrayList<>(Arrays.asList(daire1,daire2,daire3,daire4));
+        doguKirayaSirala(kiralikDaireler);
+
     }
 
-    //
+    //dogu cephesindeki kiralık daireleri kiralarına göre sıralayın
     public static void doguKirayaSirala(List<Apartman>list){
         list.stream().
-                filter(t->t.getCephe().equalsIgnoreCase("dogu")).//cephesi dogu olan daireleri filtreler
+                filter(t->t.getCephe().equalsIgnoreCase("dogu")).//cephesi dogu olan daireleri filtreledim
                 sorted(Comparator.comparing(Apartman::getKira)).forEach(System.out::println);
 
     }
     //kat sayısı 2den cok olan dairelerin kiralarını listeleyın
+
+
 
 }
