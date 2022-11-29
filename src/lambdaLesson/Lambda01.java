@@ -1,3 +1,5 @@
+package lambdaLesson;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -56,6 +58,11 @@ public class Lambda01 {
     }
     // ---> kendimiz bir method oluşturalım
     public static void yazdir(int a) {
+
+        System.out.print(a +" ");
+    }
+    public static void yazdir(String a) {
+
         System.out.print(a +" ");
     }
     public static void printElFunctional2(List<Integer> sayi) {
