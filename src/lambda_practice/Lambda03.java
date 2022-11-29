@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Lambda03 {
     public static void main(String[] args) {
@@ -14,6 +15,7 @@ public class Lambda03 {
 
         List<Apartman> kiralikDaireler=new ArrayList<>(Arrays.asList(daire1,daire2,daire3,daire4));
         doguKirayaSirala(kiralikDaireler);
+        System.out.println("kat2denCokKiraList(kiralikDaireler) = " + kat2denCokKiraList(kiralikDaireler));
 
     }
 
@@ -26,6 +28,11 @@ public class Lambda03 {
     }
     //kat sayısı 2den cok olan dairelerin kiralarını listeleyın
 
-
+    public static List<Integer> kat2denCokKiraList(List<Apartman>list){
+        return
+                list.stream().filter(t->t.getKatSayisi()>2).//kat sayısı 2den cok olan daıreler
+                        map(t->t.getKira()).
+                        collect(Collectors.toList());
+    }
 
 }
